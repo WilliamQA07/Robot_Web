@@ -1,0 +1,144 @@
+### 🏆 **Projeto de Automação Web com Robot Framework**
+
+Este projeto implementa testes automatizados para autenticação em uma aplicação web utilizando **Robot Framework** e **SeleniumLibrary**.
+
+## 🚀 **Tecnologias Utilizadas**
+- **Robot Framework**
+- **SeleniumLibrary**
+- **Python**
+- **WebDriver (Chrome, Firefox, Edge, etc.)**
+
+---
+
+## 📌 **Pré-requisitos**
+Antes de rodar os testes, certifique-se de ter instalado:
+1. **Python 3+** - [Download](https://www.python.org/downloads/)
+2. **Robot Framework**:
+   ```bash
+   pip install robotframework
+   ```
+3. **SeleniumLibrary**:
+   ```bash
+   pip install robotframework-seleniumlibrary
+   ```
+4. **WebDriver** (para o navegador desejado):
+   - **ChromeDriver**: [Download](https://sites.google.com/chromium.org/driver/)
+   - **GeckoDriver** (Firefox): [Download](https://github.com/mozilla/geckodriver/releases)
+   - **EdgeDriver**: [Download](https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/)
+
+---
+
+## 📂 **Estrutura do Projeto**
+```
+📦 automacao-robot-web
+ ┣ 📂 resources
+ ┃ ┗ 📜 keywords.robot  # Contém as palavras-chave reutilizáveis
+ ┣ 📂 tests
+ ┃ ┗ 📜 login_tests.robot  # Contém os cenários de testes
+ ┣ 📂 utils
+ ┃ ┣ 📜 secrets.robot  # Contém credenciais sensíveis (não versionado)
+ ┃ ┗ 📜 variables.robot  # Contém variáveis reutilizáveis
+ ┣ 📜 README.md  # Documentação do projeto
+ ┣ 📜 requirements.txt  # Dependências do projeto
+ ┗ 📜 robot.yaml  # Configuração do Robot Framework
+```
+
+---
+
+## 🛠 **Configuração**
+Antes de rodar os testes, configure as credenciais e variáveis:
+
+- **Arquivo `utils/variables.robot`**:
+  ```robot
+  *** Variables ***
+  ${URL}       https://github.com/login
+  ${BROWSER}   Chrome
+  ```
+- **Arquivo `utils/secrets.robot`** (⚠️ **Este arquivo deve ser mantido fora do controle de versão**):
+  ```robot
+  *** Variables ***
+  ${USER}      meu_usuario
+  ${SENHA}     minha_senha
+  ```
+
+---
+
+## 🧪 **Execução dos Testes**
+Para rodar todos os testes:
+```bash
+robot -d results tests/
+```
+
+Para rodar um teste específico:
+```bash
+robot -d results tests/login_tests.robot
+```
+
+Para rodar testes com tags:
+```bash
+robot -d results -i login tests/
+```
+
+Para gerar um relatório de saída em HTML:
+```bash
+robot --outputdir results tests/
+```
+
+---
+
+## 📝 **Cenários de Teste**
+Os testes cobrem os seguintes cenários:
+
+### ✅ **Login com Sucesso**
+1. Abre o navegador e acessa a página de login.
+2. Insere credenciais válidas e faz login.
+3. Valida que o login foi realizado com sucesso.
+4. Fecha o navegador.
+
+### ❌ **Login com Senha Incorreta**
+1. Abre o navegador e acessa a página de login.
+2. Insere um usuário válido, mas senha incorreta.
+3. Valida que uma mensagem de erro é exibida.
+4. Fecha o navegador.
+
+---
+
+## 🔑 **Palavras-Chave (Keywords)**
+O projeto utiliza palavras-chave para reutilização de código:
+
+- **Abrir Navegador**: Abre o navegador e maximiza a janela.
+- **Fazer Login**: Insere credenciais e clica no botão de login.
+- **Verificar Login Sucesso**: Confirma que o login foi efetuado.
+- **Verificar Mensagem Erro**: Confirma que a mensagem de erro foi exibida.
+- **Fechar Navegador**: Fecha o navegador ao final do teste.
+
+---
+
+## 📊 **Relatórios e Logs**
+Após a execução, os seguintes arquivos serão gerados na pasta `results/`:
+- `log.html` → Log detalhado da execução.
+- `report.html` → Relatório consolidado dos testes.
+- `output.xml` → Resultado dos testes em XML.
+
+Para visualizar os relatórios:
+```bash
+firefox results/report.html
+```
+ou
+```bash
+google-chrome results/report.html
+```
+
+---
+
+## 📌 **Melhores Práticas**
+- Utilize **variáveis** para evitar valores fixos no código.
+- Armazene **credenciais sensíveis** em um arquivo separado (`secrets.robot`).
+- Utilize **tags** para facilitar a execução seletiva dos testes.
+- Mantenha as **palavras-chave reutilizáveis** em arquivos `resources/`.
+
+---
+
+## 📜 **Licença**
+Este projeto está sob a licença **MIT**.
+

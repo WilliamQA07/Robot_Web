@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.13.1 on win32)" generated="2025-02-21T22:59:42.776201" rpa="false" schemaversion="5">
+<suite id="s1" name="Tests" source="C:\Robot_Web\tests">
+<suite id="s1-s1" name="Login Test" source="C:\Robot_Web\tests\login_test.robot">
+<test id="s1-s1-t1" name="Login com Sucesso" line="8">
+<kw name="Abrir Navegador" owner="keywords">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-02-21T22:59:43.503052" level="INFO">Opening browser 'chrome' to base url 'https://github.com/login'.</msg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-02-21T22:59:43.502820" elapsed="9.671024"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-02-21T22:59:53.174318" elapsed="0.042469"/>
+</kw>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<status status="PASS" start="2025-02-21T22:59:43.501477" elapsed="9.715480"/>
+</kw>
+<kw name="Fazer Login" owner="keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-02-21T22:59:53.218596" level="INFO">Typing text 'gagalac634@intady.com' into text field 'id=login_field'.</msg>
+<arg>id=login_field</arg>
+<arg>${usuario}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-21T22:59:53.218174" elapsed="0.146657"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-02-21T22:59:53.365226" level="INFO">Typing text 'teste@132' into text field 'id=password'.</msg>
+<arg>id=password</arg>
+<arg>${senha}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-21T22:59:53.365006" elapsed="0.126953"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-02-21T22:59:53.492705" level="INFO">Clicking button 'name=commit'.</msg>
+<arg>name=commit</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-21T22:59:53.492360" elapsed="0.822299"/>
+</kw>
+<arg>${USER}</arg>
+<arg>${SENHA}</arg>
+<status status="PASS" start="2025-02-21T22:59:53.217684" elapsed="1.097126"/>
+</kw>
+<kw name="Verificar Login Sucesso" owner="keywords">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Device Verification Code</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-02-21T22:59:54.315783" elapsed="0.015466"/>
+</kw>
+<status status="PASS" start="2025-02-21T22:59:54.315350" elapsed="0.016020"/>
+</kw>
+<kw name="Fechar Navegador" owner="keywords">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-02-21T22:59:54.332108" elapsed="2.163997"/>
+</kw>
+<status status="PASS" start="2025-02-21T22:59:54.331837" elapsed="2.164563"/>
+</kw>
+<tag>login</tag>
+<tag>positivo</tag>
+<status status="PASS" start="2025-02-21T22:59:43.500209" elapsed="12.996901"/>
+</test>
+<test id="s1-s1-t2" name="Login com Senha Incorreta" line="15">
+<kw name="Abrir Navegador" owner="keywords">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-02-21T22:59:56.500533" level="INFO">Opening browser 'chrome' to base url 'https://github.com/login'.</msg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-02-21T22:59:56.500269" elapsed="3.656109"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-02-21T23:00:00.156588" elapsed="0.039683"/>
+</kw>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<status status="PASS" start="2025-02-21T22:59:56.499635" elapsed="3.697740"/>
+</kw>
+<kw name="Fazer Login" owner="keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-02-21T23:00:00.200006" level="INFO">Typing text 'gagalac634@intady.com' into text field 'id=login_field'.</msg>
+<arg>id=login_field</arg>
+<arg>${usuario}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-21T23:00:00.199757" elapsed="0.130745"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-02-21T23:00:00.331510" level="INFO">Typing text 'senhaErrada' into text field 'id=password'.</msg>
+<arg>id=password</arg>
+<arg>${senha}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-21T23:00:00.330892" elapsed="0.104336"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-02-21T23:00:00.436076" level="INFO">Clicking button 'name=commit'.</msg>
+<arg>name=commit</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-21T23:00:00.435668" elapsed="0.599123"/>
+</kw>
+<arg>${USER}</arg>
+<arg>senhaErrada</arg>
+<status status="PASS" start="2025-02-21T23:00:00.198277" elapsed="0.836721"/>
+</kw>
+<kw name="Verificar Mensagem Erro" owner="keywords">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Incorrect username or password.</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-02-21T23:00:01.036319" elapsed="0.021820"/>
+</kw>
+<status status="PASS" start="2025-02-21T23:00:01.035868" elapsed="0.022829"/>
+</kw>
+<kw name="Fechar Navegador" owner="keywords">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-02-21T23:00:01.060308" elapsed="2.196319"/>
+</kw>
+<status status="PASS" start="2025-02-21T23:00:01.059682" elapsed="2.197449"/>
+</kw>
+<tag>login</tag>
+<tag>negativo</tag>
+<status status="PASS" start="2025-02-21T22:59:56.498728" elapsed="6.759292"/>
+</test>
+<status status="PASS" start="2025-02-21T22:59:42.807658" elapsed="20.452512"/>
+</suite>
+<status status="PASS" start="2025-02-21T22:59:42.777651" elapsed="20.484624"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="2" fail="0" skip="0">login</stat>
+<stat pass="1" fail="0" skip="0">negativo</stat>
+<stat pass="1" fail="0" skip="0">positivo</stat>
+</tag>
+<suite>
+<stat name="Tests" id="s1" pass="2" fail="0" skip="0">Tests</stat>
+<stat name="Login Test" id="s1-s1" pass="2" fail="0" skip="0">Tests.Login Test</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
