@@ -1,0 +1,13 @@
+tasks:
+  default:
+    libraries:
+      - SeleniumLibrary
+      - RequestsLibrary
+    variables:
+      - variables.yaml
+    testcases:
+      - tests/
+    resources:
+      - resources/
+    output:
+      - results/
